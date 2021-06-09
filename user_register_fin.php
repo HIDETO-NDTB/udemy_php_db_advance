@@ -6,7 +6,7 @@ session_start();
 require_once "./common_function.php";
 require_once "./user_data.php";
 
-$param = ["name", "email", "password_1", "password_2"];
+$param = ["name", "email", "pass_1", "pass_2"];
 $user_input = [];
 foreach ($param as $val) {
     if (isset($_POST[$val])) {
@@ -41,11 +41,7 @@ $pre = $dbh->prepare($sql);
 // bind
 $pre->bindValue(":name", $user_input["name"], PDO::PARAM_STR);
 $pre->bindValue(":email", $user_input["email"], PDO::PARAM_STR);
-$pre->bindValue(
-    ":pass",
-    password_hash($user_input["password_1"], PASSWORD_DEFAULT),
-    PDO::PARAM_STR
-);
+$pre->bindValue(":pass", pass_hash($user_input["pass_1"]), PDO::PARAM_STR);
 $pre->bindValue(":created", date("Y-m-d H:i:s"), PDO::PARAM_STR);
 $pre->bindValue(":updated", date("Y-m-d H:i:s"), PDO::PARAM_STR);
 

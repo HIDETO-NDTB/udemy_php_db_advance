@@ -54,13 +54,13 @@ unset($_SESSION["output_buffer"]);
         <p class="text-danger">emailの型が違います。</p>
       <?php endif; ?>
       パスワード:
-      <input type="password" class="form-control" name="password_1" value="">
-      <?php if (isset($error_detail["error_must_password_1"])): ?>
+      <input type="password" class="form-control" name="pass_1" value="">
+      <?php if (isset($error_detail["error_must_pass_1"])): ?>
         <p class="text-danger">パスワードは必須項目です。</p>
       <?php endif; ?>
       パスワード(確認用):
-      <input type="password" class="form-control" name="password_2" value="">
-      <?php if (isset($error_detail["error_must_password_2"])): ?>
+      <input type="password" class="form-control" name="pass_2" value="">
+      <?php if (isset($error_detail["error_must_pass_2"])): ?>
         <p class="text-danger">パスワード(確認用)は必須項目です。</p>
       <?php endif; ?>
       <?php if (isset($error_detail["error_length_password"])): ?>
